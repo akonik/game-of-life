@@ -18,17 +18,22 @@ export class GameLogic {
         this.generateField(seed);
     }
 
-    public generateField(seed: number) {
+    public generateField(seed: number): Array<Cell> {
+        this.field.length = 0;
         const noise2D = makeNoise2D(seed);
-
+        var result = new Array<Cell>();
         for (let x = 0; x < this.width; x++) {
             this.field[x] = new Array<Cell>();
             for (let y = 0; y < this.height; y++) {
-                this.field[x].push(new Cell(x, y, noise2D(x, y) > 0.1));
+                let cell = new Cell(x, y, noise2D(x, y) > 0.45);
+                this.field[x].push(cell);
+                result.push(cell);
             }
         }
+
+        return result;
     }
-    
+
     private prevGeneration: Array<Cell>;
     public nextGeneration(): Array<Cell> {
         let result = new Array<Cell>();
@@ -77,7 +82,7 @@ export class GameLogic {
         return this.field[x][y];
     }
 
-    get Generation(){
+    get Generation() {
         return this.generation;
     }
 }
