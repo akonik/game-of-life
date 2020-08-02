@@ -9,6 +9,9 @@
   <div [class.sidenav-opened]="isMenuOpened" id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" (click)="closeMenu()">&times;</a>
     <div class="content">
+      <label>Size</label>
+      <mat-slider (change)="onSizeChanged($event)" style="width: 100%;" min="1" max="20" step="1" value="5">
+      </mat-slider>
       <label>Speed</label>
       <mat-slider style="width: 100%;" min="1" max="5" step="1" value="2" (change)="onSpeedChanged($event)">
       </mat-slider>

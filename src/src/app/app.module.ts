@@ -7,7 +7,7 @@ import { CanvasComponent } from './components/canvas-component/canvas.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSliderModule } from '@angular/material/slider';
-import {MatButtonModule} from '@angular/material/button'
+import { MatButtonModule } from '@angular/material/button'
 
 @NgModule({
   declarations: [
@@ -17,8 +17,9 @@ import {MatButtonModule} from '@angular/material/button'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    MatSliderModule,MatButtonModule
+
+    MatSliderModule, MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -30,7 +30,7 @@ export class GameLogic {
                 result.push(cell);
             }
         }
-
+        this.generation = 0;
         return result;
     }
 
